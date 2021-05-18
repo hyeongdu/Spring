@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!-- 좀 더 짧게 사용하기, 나중에 스트링 부트로 하기 때문에 이런게 있다 정도로만 봐둘것 -->
+	<!--  constructor 라서 생성자가 필요함  -->
+	<bean id="hello" class="com.study.spring.Hello"
+		c:name="홍길동"
+		c:nickname="전우치"
+		c:printer-ref="printerA">
+	</bean>  
+	
+	
+	<!-- 
+	<bean id="hello" class="com.study.spring.Hello"
+		p:name="홍길동"
+		p:nickname="전우치"
+		p:printer-ref="printerA">
+	</bean>  -->
+	
+	<bean id="printerA" class="com.study.spring.PrinterA"/>
+	<bean id="printerB" class="com.study.spring.PrinterB"/>
+	
+</beans>
+
+<!-- bean.xml을 보고 빈태그를 보고  만들어야할것을 본다 아하 이런 프로퍼티를 보고 채워달라는 뜻이로 생각함  -->
+<!--  프린터는 객체이기 때문에 ref 로 넣는다  그리고 밑에 bean을 보고 안다  -->
+<!--  총 빈태그 3개를 보고 3개를 만ㄷ르어준다  -->

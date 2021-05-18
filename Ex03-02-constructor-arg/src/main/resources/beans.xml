@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!-- 변수 값이 맞으면 알아서 셋터로 들어감  -->
+	<!--  세터를 이용할 때는 property로  -->
+	
+	<!-- constructor-arg는 생성자 만들어줘야함 -->
+	<bean id="hello" class="com.study.spring.Hello">
+		<constructor-arg name="name" value="이순신" />
+		<constructor-arg name="nickname" value="강감찬" />
+		<constructor-arg name="printer" ref="printerA" />
+		
+		<!--  <property name="printer">
+			<ref bean="printerB"/>
+		</property>   -->
+	</bean>
+	
+	<bean id="printerA" class="com.study.spring.PrinterA"/>
+	<bean id="printerB" class="com.study.spring.PrinterB"/>
+	
+</beans>
+
+<!-- bean.xml을 보고 빈태그를 보고  만들어야할것을 본다 아하 이런 프로퍼티를 보고 채워달라는 뜻이로 생각함  -->
+<!--  프린터는 객체이기 때문에 ref 로 넣는다  그리고 밑에 bean을 보고 안다  -->
+<!--  총 빈태그 3개를 보고 3개를 만ㄷ르어준다  -->
