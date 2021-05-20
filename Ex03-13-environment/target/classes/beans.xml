@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                  http://www.springframework.org/schema/beans/spring-beans.xsd
+                  http://www.springframework.org/schema/context
+                  http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <context:property-placeholder location="classpath:config/database.properties"/>
+   
+   
+   <bean id="hello" class="com.study.spring.Hello">
+      <property name="driverClass" value="${db.driverClass}"/>
+      <property name="url" value="${db.url}"/>
+      <property name="username" value="${db.username}"/>
+      <property name="password" value="${db.password}"/>
+   </bean> 
+</beans>
+
+<!-- bean.xml을 보고 빈태그를 보고  만들어야할것을 본다 아하 이런 프로퍼티를 보고 채워달라는 뜻이로 생각함  -->
+<!--  프린터는 객체이기 때문에 ref 로 넣는다  그리고 밑에 bean을 보고 안다  -->
+<!--  총 빈태그 3개를 보고 3개를 만ㄷ르어준다  -->
