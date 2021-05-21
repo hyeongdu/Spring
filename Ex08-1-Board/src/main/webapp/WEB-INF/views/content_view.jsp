@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<%
+	String conPath = request.getContextPath();
+%>
+
+
+</head>
+<body>
+	<table width="500" cellpadding="0" cellspacing="0" border="1">
+			<tr>
+				<td>번호</td>
+				<td>${content_view.bId}</td>
+			</tr>
+			<tr>
+				<td>히트</td>
+				<td>${content_view.bHit}</td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td>${content_view.bName}</td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td>${content_view.bTitle}</td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td>${content_view.bContent}</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="<%=conPath%>/modify_view?bId=${content_view.bId}">수정</a>&nbsp;&nbsp;
+					<a href="<%=conPath%>/list">목록보기</a>&nbsp;&nbsp;
+					<a href="<%=conPath%>/delete?bId=${content_view.bId}">삭제</a>&nbsp;&nbsp;
+					<a href="<%=conPath%>/reply_view?bId=${content_view.bId}">답변</a>&nbsp;&nbsp;
+				</td>
+			</tr>
+	</table>
+</body>
+</html>
